@@ -1,11 +1,14 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="ru">
 
 <head>
+    <link rel="icon" href="{% static 'icons/logo.ico' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=JetBrains+Mono&display=swap"
@@ -13,7 +16,8 @@
 </head>
 
 <body>
-<main class="login-main">
+<main class="login-main" >
+    <img class="background_image" src="{% static 'images/background.png'%}" alt="">
     <h1>Math<br>Generator</h1>
 
     <div class="login">
@@ -21,7 +25,12 @@
         <br>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
+            <input type="hidden" name="next" value="{{ next }}"/>
+            <div class="form-error">{{ form.non_field_errors }}</div>
+            {% for f in form %}
+            <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}</p>
+            <div class="form-error">{{ f.errors }}</div>
+            {% endfor %}
             <p>
                 <button type="submit">Войти</button>
             </p>

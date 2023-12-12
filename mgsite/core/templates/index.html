@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<link rel="icon" href="{% static 'images/background.png'%}">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Math Generator</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=JetBrains+Mono&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<main>
+		<img class="background_image" src="{% static 'images/background.png'%}" alt="">
+		<input type="checkbox" id="nav-toggle" hidden>
+		<h1>Math<br>Generator</h1>
+		<nav class="nav">
+			<label for="nav-toggle" class="nav-toggle" onclick>
+				<img src="{% static 'images/img1.svg'%}">
+				<img src="{% static 'images/img2.svg'%}">
+				<img src="{% static 'images/img3.svg'%}">
+				<img src="{% static 'images/img4.svg'%}">
+				<img src="{% static 'images/img5.svg'%}">
+			</label>
+			<ul class="list-nav">
+				<li>
+					<a class="main-item" href="javascript:void(0);" tabindex="1">Алгебра</a>
+					<ul class="sub-menu">
+						<li><a href="#">Прогрессия</a></li>
+						<li><a href="#">Неравенства</a></li>
+						<li><a href="#">Квадратные уравнения</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="main-item" href="javascript:void(0);" tabindex="1">Геометрия</a>
+					<ul class="sub-menu">
+						<li><a href="#">Вектора</a></li>
+						<li><a href="#">Скалярные произведения</a></li>
+						<li><a href="#">Стереометрия</a></li>
+					</ul>
+				</li>
+				<li>
+					<a class="main-item" href="javascript:void(0);" tabindex="1">Физика</a>
+					<ul class="sub-menu">
+						<li><a href="#">Механика</a></li>
+						<li><a href="#">Квантовые явления</a></li>
+						<li><a href="#">Электромагнитные волны</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</main>
+</body>
+
+</html>
